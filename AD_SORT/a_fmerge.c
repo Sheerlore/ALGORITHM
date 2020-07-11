@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+//ファイルのマージ
 void fmerge(char *file1, char *file2, char *ofile){
     FILE *f1, *f2, *fo;
     char *p1, *p2, ss1[80], ss2[80];
