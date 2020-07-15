@@ -14,32 +14,28 @@ int main() {
 
     if((fp = fopen("./input.txt", "r")) == NULL) exit(1);
 
-    for(i = 0; i < 10000 && fgets(data[i], sizeof(data[i]), fp) != NULL;i++){
-        // printf("data[%d]=%s\n", i, data[i]);
-
+    for(i = 0; i < N && fgets(data[i], sizeof(data[i]), fp) != NULL;i++){
         te = data[i];
         j = 0;
-        //printf("%s \n", te);
         while((ee = strtok(te, " \n")) != NULL){
-            //printf(" [%s]", ee);
             num[i][j] = atoi(ee);
-            te = NULL;
             j++;
+            te = NULL;
         }
-        //printf("\n");
 
-        printf("%d\n", num[i][0]); //q1
+        printf("first = %d\n", num[i][0]);
 
         temp = num[i][0];
-        for(k = 1; k < (sizeof(num[i]) / sizeof(int)) ; k++){
-            //printf("%d ", num[i][k]);     //すべて表示
+        for(k = 0; k < (sizeof(num[i]) / sizeof(int)); k++){
+            printf("%d ", num[i][k]);     //すべて表示
             if(temp < num[i][k]){
                 temp = num[i][k];
             }
         }
+        printf("\n");
         printf("max = %d \n", temp);
+        printf("\n");
     }
-    puts(" ");
     fclose(fp);
 
     return 0;
