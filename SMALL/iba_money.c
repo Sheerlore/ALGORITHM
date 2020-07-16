@@ -11,7 +11,6 @@ double nenri(double money){
         }
         printf("%d%%の年利で50年後の預金は%.2lf円です.\n", i, temp);
     }
-
 }
 
 int main() {
